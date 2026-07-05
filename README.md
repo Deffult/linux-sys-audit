@@ -1,5 +1,7 @@
 # Linux System Audit & Monitor
-
+##Developer
+**Mr.Deffult**
+*github profile* (https://github.com/Deffult/) | (Contact-SimpleX / https://smp8.simplex.im/a#zMMTM1XKx_d3yLxZXfEms82Mo1OljW6cb3hT5HahW94)
 A comprehensive Bash script designed for Linux system administrators to perform quick health checks, audit security, and monitor system performance.
 
 ## Features
