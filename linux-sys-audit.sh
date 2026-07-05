@@ -1,11 +1,12 @@
 #!/bin/bash
 # ============================================================
-# Script Name: System Scanner + Performance Monitor
+# Script Name: linux-sys-audit + Performance Monitor
+# Author: Mr.Deffult
 # Description: System scanning, update checking, performance monitoring
+# Version: 2.0
 # Supports: Linux (Ubuntu/Debian/RHEL/CentOS/Fedora/Arch/Parrot)
 # Outputs: TXT + JSON reports only
 # ============================================================
-
 # ------------------- SETTINGS -------------------
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
@@ -555,6 +556,8 @@ generate_reports() {
 main() {
     echo -e "${BLUE}========================================${NC}"
     echo -e "${BLUE}   System Scanner + Performance Monitor${NC}"
+    echo -e "${BLUE}   Created by: Mr.Deffult${NC}"
+    echo -e "${YELLOW}   v2.0${NC}"
     echo -e "${BLUE}========================================${NC}"
     echo ""
     
