@@ -388,7 +388,7 @@ generate_reports() {
         echo "           Recommendations"
         echo "=========================================="
         if [[ $UPDATES_COUNT -gt 0 ]]; then
-            echo "   ⚠️  $UPDATES_COUNT updates available"
+            echo "     $UPDATES_COUNT updates available"
             if [[ "$OS_ID" == "ubuntu" ]] || [[ "$OS_ID" == "debian" ]] || [[ "$OS_ID" == "parrot" ]]; then
                 echo "      sudo apt upgrade -y"
             elif [[ "$OS_ID" == "rhel" ]] || [[ "$OS_ID" == "centos" ]] || [[ "$OS_ID" == "fedora" ]]; then
@@ -397,24 +397,24 @@ generate_reports() {
                 echo "      sudo pacman -Syu"
             fi
         else
-            echo "   ✅ System is fully updated"
+            echo "    System is fully updated"
         fi
         
         if [[ ${#FOUND_OLD[@]} -gt 0 ]]; then
-            echo "   ⚠️  Stop/Update old services:"
+            echo "     Stop/Update old services:"
             for item in "${FOUND_OLD[@]}"; do
                 echo "      - $item"
             done
         fi
         
         if (( $(echo "$CPU_USAGE > 70" | bc -l 2>/dev/null || echo "0") )); then
-            echo "   ⚠️  High CPU: $CPU_USAGE%"
+            echo "     High CPU: $CPU_USAGE%"
         fi
         if (( $(echo "$MEM_PERCENT > 70" | bc -l 2>/dev/null || echo "0") )); then
-            echo "   ⚠️  High RAM: $MEM_PERCENT%"
+            echo "     High RAM: $MEM_PERCENT%"
         fi
         if (( DISK_PERCENT > 75 )); then
-            echo "   ⚠️  Low disk space: $DISK_PERCENT%"
+            echo "     Low disk space: $DISK_PERCENT%"
         fi
         
         echo ""
@@ -548,8 +548,8 @@ generate_reports() {
     } > "$JSON_FILE"
     
     echo -e "${GREEN}✓ Reports generated:${NC}"
-    echo "  📄 TXT: $REPORT_FILE"
-    echo "  📊 JSON: $JSON_FILE"
+    echo "   TXT: $REPORT_FILE"
+    echo "   JSON: $JSON_FILE"
 }
 
 # ------------------- MAIN FUNCTION -------------------
@@ -575,7 +575,7 @@ main() {
             check_updates_arch
             ;;
         *)
-            echo -e "${RED}⚠️  Unsupported OS: $OS_NAME${NC}"
+            echo -e "${RED}  Unsupported OS: $OS_NAME${NC}"
             echo "Only checking services and performance"
             UPDATES_COUNT=0
             UPDATES_LIST=""
@@ -591,8 +591,8 @@ main() {
     generate_reports
     
     echo ""
-    echo -e "${GREEN}✅ Scan completed!${NC}"
-    echo -e "📂 Reports saved in: $SCRIPT_DIR"
+    echo -e "${GREEN} Scan completed!${NC}"
+    echo -e " Reports saved in: $SCRIPT_DIR"
 }
 
 # ------------------- EXECUTE SCRIPT -------------------
